@@ -234,7 +234,7 @@ footer a{color:#fff}
     <div class="wrap">
       <img class="flyer" src="flyer-curso-adulto.jpg" alt="Flyer do curso Do Plié ao Grande Jeté: Didática para Ballet Adulto, presencial em Praia Grande" loading="lazy" width="880" height="1100">
       <div>
-        <p class="kicker">Inscrições abertas · Presencial em Praia Grande/SP</p>
+        <p class="kicker" data-inscricoes="kicker">Inscrições abertas até 30/11 · Presencial em Praia Grande/SP</p>
         <h2>Do Plié ao Grande Jeté</h2>
         <p class="sub">Didática para Ballet Adulto · Curso para professoras</p>
         <p>Ensinar ballet adulto pede uma didática própria. O que ensinar, como corrigir e quando avançar: um curso para professoras e bailarinas adultas que desejam dar aulas com segurança.</p>
@@ -270,7 +270,7 @@ footer a{color:#fff}
       </div>
       <div class="grid3">
         <a class="card" href="#contato"><img src="bastidores-tutu.jpg" alt="Bailarina de tutu nos bastidores" loading="lazy"><div class="body"><span class="tag">Para professoras</span><h3>Curso para Professores de Ballet Infantil</h3><p>Ludicidade com fundamento: aulas que encantam a criança e têm objetivo claro para a professora.</p><span class="more">Quero saber mais →</span></div></a>
-        <a class="card" href="#curso-adulto"><img src="flyer-curso-adulto.jpg" alt="Flyer do curso Do Plié ao Grande Jeté: Didática para Ballet Adulto" style="object-position:center top" loading="lazy"><div class="body"><span style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px"><span class="tag">Para professoras</span><span style="display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:999px;background:#1E7A4C;color:#FFFFFF;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase"><span aria-hidden="true" style="width:7px;height:7px;border-radius:50%;background:#9BE8B8"></span>Inscrições abertas</span></span><h3>Curso para Professores de Ballet Juvenil e Adulto</h3><p>Didática, progressão técnica e linguagem para turmas juvenis e adultas.</p><span class="more">Ver o curso →</span></div></a>
+        <a class="card" href="#curso-adulto"><img src="flyer-curso-adulto.jpg" alt="Flyer do curso Do Plié ao Grande Jeté: Didática para Ballet Adulto" style="object-position:center top" loading="lazy"><div class="body"><span style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px"><span class="tag">Para professoras</span><span data-inscricoes="selo" style="display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:999px;background:#1E7A4C;color:#FFFFFF;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase"><span aria-hidden="true" style="width:7px;height:7px;border-radius:50%;background:#9BE8B8"></span>Inscrições abertas até 30/11</span></span><h3>Curso para Professores de Ballet Juvenil e Adulto</h3><p>Didática, progressão técnica e linguagem para turmas juvenis e adultas.</p><span class="more">Ver o curso →</span></div></a>
         <a class="card" id="ballet-online" href="#contato"><img src="desafio.jpg" alt="Alunas adultas em quinta posição de braços" style="object-position:center 25%" loading="lazy"><div class="body"><span class="tag">Para alunas adultas</span><h3>Curso Online de Ballet Adulto</h3><p>Para começar ou voltar ao ballet no seu ritmo, de casa, com técnica explicada passo a passo.</p><span class="more">Quero dançar →</span></div></a>
         <a class="card" href="#coreografias"><img src="casamento-capa.jpg" alt="Noivos dançando a valsa" loading="lazy"><div class="body"><span class="tag">Eventos</span><h3>Coreografias para Casamento, 15 Anos e Eventos</h3><p>A valsa, a entrada ou a apresentação criada sob medida e ensaiada com calma.</p><span class="more">Ver vídeo e pedir orçamento →</span></div></a>
         <a class="card" id="mentoria" href="#contato"><img src="le-flor.jpg" alt="Professora preparando aluna para apresentação" style="object-position:center 25%" loading="lazy"><div class="body"><span class="tag">Individual</span><h3>Mentoria Individual</h3><p>Planejamento de aulas, turmas, didática e carreira na dança para professoras e donas de escola.</p><span class="more">Agendar conversa →</span></div></a>
@@ -365,5 +365,14 @@ footer a{color:#fff}
   </div>
 </footer>
 
+<script>
+/* Inscrições do curso fecham em 30/11/2026: a partir de 01/12 o selo some e o texto muda sozinho */
+(function(){
+  var fim=new Date('2026-12-01T00:00:00-03:00');
+  if(new Date()<fim) return;
+  var selo=document.querySelector('[data-inscricoes="selo"]'); if(selo) selo.remove();
+  var k=document.querySelector('[data-inscricoes="kicker"]'); if(k) k.textContent='Inscrições encerradas · Presencial em Praia Grande/SP';
+})();
+</script>
 </body>
 </html>
