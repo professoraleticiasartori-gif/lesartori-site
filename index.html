@@ -63,6 +63,21 @@ nav a:hover{color:var(--magenta)}
 .card{scroll-margin-top:150px}
 section{scroll-margin-top:120px}
 
+/* lançamentos black + pink */
+.lanc{background:#0B0709;color:#fff;position:relative;overflow:hidden}
+.lanc::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 120% at 0% 0%,rgba(255,46,140,.22),transparent 60%),radial-gradient(50% 120% at 100% 100%,rgba(255,46,140,.18),transparent 60%);pointer-events:none}
+.lanc .wrap{position:relative;padding-top:22px;padding-bottom:22px;display:grid;grid-template-columns:auto minmax(0,1fr) minmax(0,1fr);gap:16px 22px;align-items:stretch}
+.lanc .tit{display:flex;flex-direction:column;justify-content:center;font-family:'Playfair Display',serif;font-style:italic;font-size:30px;line-height:1;color:#FF2E8C;padding-right:6px}
+.lanc .tit small{font-family:'Montserrat',sans-serif;font-style:normal;font-size:11px;font-weight:600;letter-spacing:.28em;color:#fff;margin-bottom:6px}
+.lanc .item{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 18px;border:1px solid rgba(255,46,140,.55);border-radius:18px;background:rgba(255,255,255,.03);text-decoration:none;color:#fff;transition:border-color .2s,background .2s}
+.lanc .item:hover{border-color:#FF2E8C;background:rgba(255,46,140,.08);color:#fff}
+.lanc .item .tag{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;background:#FF2E8C;color:#0B0709;padding:4px 10px;border-radius:999px;margin-bottom:8px}
+.lanc .item strong{display:block;font-family:'Playfair Display',serif;font-weight:600;font-size:20px;line-height:1.15}
+.lanc .item span.sub{display:block;font-size:13px;color:#F3C6D9;margin-top:4px}
+.lanc .item .go{flex:none;display:inline-flex;align-items:center;min-height:44px;padding:0 18px;border-radius:999px;background:#FF2E8C;color:#0B0709;font-weight:700;font-size:14px;white-space:nowrap}
+@media (max-width:960px){.lanc .wrap{grid-template-columns:minmax(0,1fr)}.lanc .tit{flex-direction:row;align-items:baseline;gap:12px;font-size:24px}}
+@media (max-width:480px){.lanc .item{flex-direction:column;align-items:flex-start}.lanc .item .go{align-self:stretch;justify-content:center}}
+
 /* hero */
 .hero{position:relative;min-height:min(88vh,760px);display:flex;align-items:flex-end;color:#fff;overflow:hidden;background:var(--wine)}
 .hero .bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%}
@@ -208,6 +223,20 @@ footer a{color:#fff}
 </header>
 
 <main id="inicio">
+
+  <section class="lanc" aria-label="Lançamentos" style="padding:0">
+    <div class="wrap">
+      <p class="tit" style="margin:0"><small>NOVIDADES</small>Lançamentos</p>
+      <a class="item" href="https://cursos.lesartori.com.br/ballet-preparatorio/">
+        <span><span class="tag">Novo e-book</span><strong>Ballet Preparatório 7 e 8 anos</strong><span class="sub">Guia completo para professoras · oferta de lançamento</span></span>
+        <span class="go">Quero o e-book →</span>
+      </a>
+      <a class="item" data-inscricoes="lanc" href="https://docs.google.com/forms/d/e/1FAIpQLScuD8jm-VgUp10xaMwU0OhO3BQmQNUGMepbw6XluQPEneBl9g/viewform" target="_blank" rel="noopener">
+        <span><span class="tag">Inscrições até 30/11</span><strong>Curso Do Plié ao Grande Jeté</strong><span class="sub">Didática para Ballet Adulto · presencial em Praia Grande</span></span>
+        <span class="go">Fazer inscrição →</span>
+      </a>
+    </div>
+  </section>
 
   <section class="hero">
     <img class="bg" src="hero-turma.jpg" alt="Prof. Le Sartori abraçada com alunas adultas de ballet, todas sorrindo" width="1122" height="880">
@@ -373,6 +402,7 @@ footer a{color:#fff}
   var fim=new Date('2026-12-01T00:00:00-03:00');
   if(new Date()<fim) return;
   var selo=document.querySelector('[data-inscricoes="selo"]'); if(selo) selo.remove();
+  var l=document.querySelector('[data-inscricoes="lanc"]'); if(l) l.remove();
   var k=document.querySelector('[data-inscricoes="kicker"]'); if(k) k.textContent='Inscrições encerradas · Presencial em Praia Grande/SP';
 })();
 </script>
