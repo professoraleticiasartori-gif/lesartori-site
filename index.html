@@ -15,6 +15,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
 <style>
 :root{
   --wine:#4A1230; --magenta:#A3165A; --magenta-d:#7E0F45; --pink:#F2A9C2;
@@ -197,6 +198,28 @@ footer{background:var(--wine);color:#E9CFD9}
 footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px;padding-top:30px;padding-bottom:30px;font-size:13px}
 footer img{height:46px;width:auto;filter:brightness(0) invert(1);opacity:.92}
 footer a{color:#fff}
+
+/* Entre Histórias — Black Friday */
+.eh{position:relative;overflow:hidden;background:#F4E9D2 url(https://cursos.lesartori.com.br/entre-historias/img/parch.jpg) center/900px auto;color:#2E2015;padding:76px 0}
+.eh::after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 120px rgba(110,82,51,.28);pointer-events:none}
+.eh .bgill{position:absolute;right:-90px;bottom:-70px;width:640px;max-width:none;opacity:.14;pointer-events:none}
+.eh .wrap{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:44px;align-items:center}
+.eh .era{font-family:'Great Vibes',cursive;font-size:46px;line-height:1;color:#6E5233;margin:0}
+.eh h2{font-family:'Cormorant Garamond',Georgia,serif;font-weight:700;font-size:clamp(44px,6vw,68px);line-height:1;color:#7A0D3B;letter-spacing:0;margin:8px 0 6px}
+.eh .sub{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-weight:600;font-size:25px;color:#A3124F;margin:0 0 16px}
+.eh p.txt{font-size:17px;color:#4E3A27;margin:0 0 14px;max-width:560px}
+.eh .q{font-family:'Cormorant Garamond',Georgia,serif;font-size:21px;color:#2E2015;margin:0 0 22px}
+.eh .bf{display:inline-block;background:#2E2015;color:#F7E7C6;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:7px 16px;border-radius:999px;margin-bottom:14px}
+.eh .preco{font-size:15px;color:#4E3A27;margin:14px 0 0}
+.eh .preco b{color:#A3124F;font-size:19px}
+.eh .btn{background:#A3124F;box-shadow:0 10px 24px rgba(122,13,59,.25)}
+.eh .art{position:relative;min-height:400px;display:flex;align-items:flex-end;justify-content:center}
+.eh .art .capa{position:relative;z-index:1;width:56%;max-width:270px;border-radius:6px 14px 14px 6px;border-left:8px solid rgba(59,42,28,.22);box-shadow:0 22px 40px rgba(59,42,28,.35);transform:rotate(-5deg) translateX(-30%)}
+.eh .art .lele{position:absolute;z-index:2;right:0;bottom:-14px;width:64%;max-width:310px;aspect-ratio:1;object-fit:cover;-webkit-mask-image:radial-gradient(ellipse,#000 52%,transparent 71%);mask-image:radial-gradient(ellipse,#000 52%,transparent 71%)}
+.eh .flu{position:absolute;pointer-events:none;filter:drop-shadow(0 8px 10px rgba(59,42,28,.18));animation:ehflu 6s ease-in-out infinite}
+@keyframes ehflu{0%,100%{translate:0 0}50%{translate:0 -10px}}
+@media (prefers-reduced-motion:reduce){.eh .flu{animation:none}}
+@media (max-width:860px){.eh .wrap{grid-template-columns:minmax(0,1fr)}.eh .art{min-height:330px}.eh .flu{display:none}}
 </style>
 </head>
 <body>
@@ -206,6 +229,7 @@ footer a{color:#fff}
     <a href="#inicio" aria-label="Le Sartori — início"><img src="logo-le-sartori.png" alt="Le Sartori" width="320" height="117"></a>
     <nav aria-label="Menu principal">
       <a href="#sobre">Sobre</a>
+      <a href="#entre-historias" style="color:var(--magenta);font-weight:600">Entre Histórias</a>
       <a href="#cursos">Cursos e serviços</a>
       <a href="#coreografias">Coreografias</a>
       <a href="#galeria">Galeria</a>
@@ -216,6 +240,7 @@ footer a{color:#fff}
   <nav class="chips" aria-label="O que você procura">
     <div class="in">
       <span>O que você procura?</span>
+      <a class="destaque" href="https://cursos.lesartori.com.br/entre-historias/">Black Friday: Entre Histórias</a>
       <a href="#curso-adulto">Curso para professores</a>
       <a href="#ballet-online">Ballet online</a>
       <a href="#coreografias">Coreografia para eventos</a>
@@ -245,6 +270,29 @@ footer a{color:#fff}
         <span><span class="tag">Inscrições até 30/11</span><strong>Curso Do Plié ao Grande Jeté</strong><span class="sub">Didática para Ballet Adulto · presencial em Praia Grande</span></span>
         <span class="go">Fazer inscrição →</span>
       </a>
+    </div>
+  </section>
+
+  <section class="eh" id="entre-historias" aria-label="Entre Histórias">
+    <img class="bgill" src="https://cursos.lesartori.com.br/entre-historias/img/bg_col_esm2.png" alt="" aria-hidden="true">
+    <img class="flu" src="https://cursos.lesartori.com.br/entre-historias/img/el_pandeiro.png" alt="" aria-hidden="true" style="left:52%;top:28px;width:64px;transform:rotate(-12deg)">
+    <img class="flu" src="https://cursos.lesartori.com.br/entre-historias/img/el_fita.png" alt="" aria-hidden="true" style="right:3%;top:26px;width:68px;animation-delay:-2s">
+    <img class="flu" src="https://cursos.lesartori.com.br/entre-historias/img/el_estrelas.png" alt="" aria-hidden="true" style="left:44%;bottom:22px;width:58px;animation-delay:-4s">
+    <div class="wrap">
+      <div>
+        <span class="bf">Black Friday · 06 a 30/11</span>
+        <p class="era">Era uma vez…</p>
+        <h2>Entre Histórias</h2>
+        <p class="sub">Um conto de repertório · meu projeto autoral</p>
+        <p class="txt">Quase 10 anos estudando repertório e ensinando crianças viraram uma série de e-books. Coppélia, Esmeralda, Napoli e O Quebra-Nozes, cada um com a história original, a pesquisa, o conto adaptado e a aula pronta para Baby Class (3 a 6) e Pré-Ballet (7 e 8).</p>
+        <p class="q">“A criança vive a história. A professora compreende o objetivo.”</p>
+        <a class="btn" href="https://cursos.lesartori.com.br/entre-historias/">Quero os e-books →</a>
+        <p class="preco">de <s>R$ 29,90</s> por <b>R$ 17,90</b> cada · os 8 por <b>R$ 97</b></p>
+      </div>
+      <div class="art">
+        <img class="capa" src="https://cursos.lesartori.com.br/entre-historias/img/capa_esmeralda_baby.jpg" alt="Capa do e-book Entre Histórias: Esmeralda">
+        <img class="lele" src="https://cursos.lesartori.com.br/entre-historias/img/esm_pose1.jpg" alt="Lelê, a mascote Le Sartori, vestida de Esmeralda com o pandeiro">
+      </div>
     </div>
   </section>
 
