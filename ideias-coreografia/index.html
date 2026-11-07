@@ -229,6 +229,22 @@ footer .logo{color:var(--gold-soft)}
 .offer{overflow:visible}
 .offer .lele-rev{position:absolute;width:170px;left:-200px;bottom:20px}
 @media (max-width:980px){.offer .lele-rev{position:static;width:110px;margin:-110px auto 14px}.offer{margin-top:120px}}
+
+/* página de conversão */
+.hero-price{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+.hp-label{font-size:.72rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--rose)}
+.hp-val{font-family:var(--f-display);font-size:3.2rem;line-height:1;color:var(--ink)}
+.hp-val small{font-size:1.2rem;vertical-align:super;margin-right:4px;color:var(--muted)}
+.teaser{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;margin-top:44px}
+.tz{background:#fff;border:1px solid var(--gold-soft);padding:26px 22px;text-align:center;display:flex;flex-direction:column;gap:6px;position:relative}
+.tz-n{font-size:.68rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+.tz h3{font-size:1.5rem}
+.tz-age{font-size:.85rem;color:var(--muted);margin-bottom:10px}
+.tz-open{font-family:var(--f-display);font-style:italic;font-size:1.15rem;color:var(--rose);border-top:1px solid var(--gold-soft);padding-top:10px}
+.tz-lock{font-size:.85rem;color:var(--muted);filter:none}
+.tz-lock::before{content:"🔒 ";}
+@media (max-width:900px){.teaser{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:480px){.arch{max-width:250px!important}.teaser{grid-template-columns:minmax(0,1fr)}.hero-inner .hero-price{justify-content:center}}
 </style>
 </head>
 <body>
@@ -286,15 +302,16 @@ footer .logo{color:var(--gold-soft)}
     <div class="hero-inner">
       <div class="stack">
         <span class="eyebrow">Para professoras de ballet</span>
-        <h1>Sua coreografia de fim de ano, <em>pronta para usar</em> ainda este ano.</h1>
-        <p class="lead">17 ideias de coreografia separadas por idade, do Baby Class à turma adulta, com música, passos, formação no palco, figurino que cabe no bolso e o momento que faz a plateia aplaudir.</p>
+        <h1>A apresentação está chegando? <em>Sua coreografia está aqui.</em></h1>
+        <p class="lead">17 ideias prontas para montar com a sua turma, do Baby Class à turma adulta. Escolha, ensaie em 4 semanas e brilhe no palco.</p>
         <ul>
-          <li>Plano de ensaio de 4 semanas incluído</li>
-          <li>Músicas clássicas em domínio público</li>
-          <li>E-book em PDF com acesso imediato</li>
+          <li>Pare de perder noites criando do zero</li>
+          <li>Ideias que crianças pequenas conseguem dançar sozinhas</li>
+          <li>Figurinos baratos que as famílias conseguem fazer</li>
         </ul>
+        <div class="hero-price"><span class="hp-label">Preço de lançamento</span><span class="hp-val"><small>R$</small>9,90</span></div>
         <div><a class="btn js-comprar" href="#oferta">Quero o e-book por R$ 9,90</a></div>
-        <p class="fine">Preço de lançamento. E-book em PDF, enviado logo após o pagamento.</p>
+        <p class="fine">E-book em PDF no seu celular logo após o pagamento · garantia de 7 dias</p>
       </div>
       <div class="arch"><img class="arch-img" src="professora-tablet.jpg" alt="Ilustração: professora de ballet mostrando o e-book no tablet para as alunas na sala de aula" width="880" height="1100"></div>
     </div>
@@ -317,81 +334,22 @@ footer .logo{color:var(--gold-soft)}
     </div>
   </section>
 
-  <!-- PROGRAMA -->
+  <!-- O QUE VOCÊ RECEBE -->
   <section class="band programme-band">
     <div class="wrap">
       <div class="stack center narrow">
-        <span class="eyebrow">O programa</span>
-        <h2>17 ideias de coreografia, organizadas pela idade da sua turma.</h2>
-        <p class="lead">Escolha pela aluna mais nova, adapte os passos ao nível dela e comece no próximo ensaio.</p>
+        <img class="lele lele-oi" src="lele-tablet.png" alt="Lelê mostrando o e-book no tablet" width="265" height="493" loading="lazy">
+        <span class="eyebrow">O que tem no e-book</span>
+        <h2>17 ideias, uma para cada turma sua.</h2>
+        <p class="lead">Cada ideia vem com história, música, passos, formação no palco, figurino econômico e o momento que faz a plateia aplaudir.</p>
       </div>
-      <div class="programme">
-        <div class="act">
-          <div class="act-head"><span class="eyebrow">Primeiro ato · 3 a 5 anos</span><h3>Baby Class</h3></div>
-          <ol>
-            <li><span class="n">1</span><span class="row"><span class="t">Jardim das Borboletas</span><span class="dots"></span><span class="m">Valsa das Flores, Tchaikovsky</span></span></li>
-            <li><span class="n">2</span><span class="row"><span class="t">Fadinhas de Natal</span><span class="dots"></span><span class="m">Fada Açucarada, Tchaikovsky</span></span></li>
-            <li><span class="n">3</span><span class="row"><span class="t">Bichinhos do Carnaval dos Animais</span><span class="dots"></span><span class="m">Marcha Real do Leão, Saint-Saëns</span></span></li>
-            <li><span class="n">4</span><span class="row"><span class="t">Bonecas de Corda</span><span class="dots"></span><span class="m">Valsa de Coppélia, Delibes</span></span></li>
-            <li><span class="n">5</span><span class="row"><span class="t">Gotinhas de Chuva</span><span class="dots"></span><span class="m">Gota d'Água, Chopin</span></span></li>
-          </ol>
-        </div>
-        <div class="act">
-          <div class="act-head"><span class="eyebrow">Segundo ato · 6 a 8 anos</span><h3>Infantil</h3></div>
-          <ol>
-            <li><span class="n">6</span><span class="row"><span class="t">Soldadinhos e Bonecas</span><span class="dots"></span><span class="m">Marcha do Quebra-Nozes, Tchaikovsky</span></span></li>
-            <li><span class="n">7</span><span class="row"><span class="t">Flocos de Neve</span><span class="dots"></span><span class="m">Valsa dos Flocos de Neve, Tchaikovsky</span></span></li>
-            <li><span class="n">8</span><span class="row"><span class="t">Festa no Fundo do Mar</span><span class="dots"></span><span class="m">Aquário, Saint-Saëns</span></span></li>
-            <li><span class="n">9</span><span class="row"><span class="t">Doces do Reino Encantado</span><span class="dots"></span><span class="m">Trepak, Tchaikovsky</span></span></li>
-            <li><span class="n">10</span><span class="row"><span class="t">Jardim Encantado</span><span class="dots"></span><span class="m">Manhã, Grieg</span></span></li>
-          </ol>
-        </div>
-        <div class="act">
-          <div class="act-head"><span class="eyebrow">Terceiro ato · 9 a 12 anos</span><h3>Preparatório</h3></div>
-          <ol>
-            <li><span class="n">11</span><span class="row"><span class="t">Valsa das Flores</span><span class="dots"></span><span class="m">Tchaikovsky</span></span></li>
-            <li><span class="n">12</span><span class="row"><span class="t">Pequenos Cisnes</span><span class="dots"></span><span class="m">O Lago dos Cisnes, Tchaikovsky</span></span></li>
-            <li><span class="n">13</span><span class="row"><span class="t">Baile da Princesa</span><span class="dots"></span><span class="m">Danúbio Azul, J. Strauss II</span></span></li>
-            <li><span class="n">14</span><span class="row"><span class="t">Galope Final</span><span class="dots"></span><span class="m">Galope Infernal, Offenbach</span></span></li>
-            <li><span class="n">15</span><span class="row"><span class="t">Ventos de Inverno</span><span class="dots"></span><span class="m">Inverno, Vivaldi</span></span></li>
-          </ol>
-        </div>
-        <div class="act">
-          <div class="act-head"><span class="eyebrow">Gran finale</span><h3>Bônus</h3></div>
-          <ol>
-            <li><span class="n">16</span><span class="row"><span class="t">Luar, para turma adulta</span><span class="dots"></span><span class="m">Clair de Lune, Debussy</span></span></li>
-            <li><span class="n">17</span><span class="row"><span class="t">A révérence de todas as turmas</span><span class="dots"></span><span class="m">Marcha Radetzky, J. Strauss I</span></span></li>
-          </ol>
-        </div>
+      <div class="teaser">
+        <div class="tz"><span class="tz-n">5 ideias</span><h3>Baby Class</h3><p class="tz-age">3 a 5 anos</p><p class="tz-open">Bonecas de Corda</p><p class="tz-lock">+ 4 ideias no e-book</p></div>
+        <div class="tz"><span class="tz-n">5 ideias</span><h3>Infantil</h3><p class="tz-age">6 a 8 anos</p><p class="tz-open">Flocos de Neve</p><p class="tz-lock">+ 4 ideias no e-book</p></div>
+        <div class="tz"><span class="tz-n">5 ideias</span><h3>Preparatório</h3><p class="tz-age">9 a 12 anos</p><p class="tz-open">Valsa das Flores</p><p class="tz-lock">+ 4 ideias no e-book</p></div>
+        <div class="tz"><span class="tz-n">2 bônus</span><h3>Adultas e finale</h3><p class="tz-age">todas as turmas</p><p class="tz-open">A révérence de todas as turmas</p><p class="tz-lock">+ 1 ideia no e-book</p></div>
       </div>
-    </div>
-  </section>
-
-  <!-- ANATOMIA -->
-  <section class="band anat">
-    <div class="wrap">
-      <div class="stack center narrow">
-        <span class="eyebrow">Como cada ideia vem</span>
-        <h2>O que vem em cada uma das 17 ideias.</h2>
-        <p class="lead">Veja um exemplo: Bonecas de Corda, para 3 a 5 anos.</p>
-      </div>
-      <div class="anat-grid">
-        <dl class="fields">
-          <div><dt>Música</dt><dd>Valsa de Coppélia, Delibes</dd></div>
-          <div><dt>A história</dt><dd>Bonecas de uma loja de brinquedos ganham vida quando alguém dá corda.</dd></div>
-          <div><dt>Estrutura</dt><dd>Entrada em pose, a corda acaba e volta, final congelado.</dd></div>
-          <div><dt>Formação</dt><dd>Duas linhas desencontradas, como uma vitrine.</dd></div>
-          <div><dt>Passos</dt><dd>Plié, relevé, braços em primeira e segunda, giro na meia ponta.</dd></div>
-          <div><dt>Figurino</dt><dd>Collant, saia de tule, laço grande e bochechas rosadas.</dd></div>
-          <div><dt>Momento UAU</dt><dd>A pausa no meio da música. A plateia ri e aplaude.</dd></div>
-        </dl>
-        <figure class="stage-fig excerpt">
-          <img class="lele lele-tablet" src="lele-tablet.png" alt="Lelê mostrando o e-book no tablet" width="265" height="493" loading="lazy">
-          <span class="eyebrow">Trecho do e-book</span>
-          <blockquote>"As paradas dão à criança um ponto de referência claro, e quem se perde congela sem ninguém perceber."</blockquote>
-          <figcaption>Bonecas de Corda, Baby Class</figcaption>
-        </figure>
-      </div>
+      <div class="center" style="margin-top:40px"><a class="btn js-comprar" href="#oferta">Quero as 17 ideias por R$ 9,90</a></div>
     </div>
   </section>
 
@@ -399,8 +357,8 @@ footer .logo{color:var(--gold-soft)}
   <section class="band">
     <div class="wrap">
       <div class="stack center narrow">
-        <span class="eyebrow">Junto com as 17 ideias</span>
-        <h2>Para a turma brilhar sem susto no dia.</h2>
+        <span class="eyebrow">Você também leva</span>
+        <h2>Tudo para chegar ao dia da apresentação sem susto.</h2>
         <div class="ornament"><svg><use href="#fleuron"/></svg></div>
       </div>
       <div class="bonus">
@@ -445,7 +403,7 @@ footer .logo{color:var(--gold-soft)}
     <div class="wrap">
       <div class="stack center narrow">
         <span class="eyebrow">Preço de lançamento</span>
-        <h2>Comece a montar a coreografia no próximo ensaio.</h2>
+        <h2>Menos que um lanche para resolver a sua apresentação.</h2>
       </div>
       <div class="offer">
         <img class="lele lele-rev" src="lele-reverence.png" alt="Lelê fazendo révérence" width="327" height="489" loading="lazy">
@@ -475,9 +433,7 @@ footer .logo{color:var(--gold-soft)}
       <div class="stack center" style="margin-bottom:12px"><h2>Perguntas frequentes</h2></div>
       <details><summary>Serve para a minha turma?</summary><p>Tem ideias para 3 a 5 anos, 6 a 8 anos, 9 a 12 anos e turma adulta. Se a turma tiver idades misturadas, o e-book mostra como escolher e adaptar.</p></details>
       <details><summary>Dá tempo de montar até a apresentação?</summary><p>Sim. O plano de ensaio foi pensado para 4 semanas, com 2 aulas por semana e de 15 a 20 minutos de coreografia em cada aula.</p></details>
-      <details><summary>E os direitos das músicas?</summary><p>Todas as composições sugeridas são clássicas e estão em domínio público. A gravação que você usar pode ter direitos, então prefira gravações livres de direitos ou licenciadas e confira as regras do local da apresentação.</p></details>
       <details><summary>Como eu recebo?</summary><p>Logo depois da confirmação do pagamento, você recebe o PDF no WhatsApp e no e-mail. Você pode ler no celular, no computador ou imprimir.</p></details>
-      <details><summary>Posso usar as ideias em mais de uma turma?</summary><p>Pode. As ideias são para você usar nas suas turmas. Só não é permitido revender ou repassar o arquivo.</p></details>
     </div>
   </section>
 </main>
