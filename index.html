@@ -220,6 +220,13 @@ footer a{color:#fff}
 @keyframes ehflu{0%,100%{translate:0 0}50%{translate:0 -10px}}
 @media (prefers-reduced-motion:reduce){.eh .flu{animation:none}}
 @media (max-width:860px){.eh .wrap{grid-template-columns:minmax(0,1fr)}.eh .art{min-height:330px}.eh .flu{display:none}}
+
+/* Natal — barra de aviso */
+.natal-bar{display:block;background:#7E1630;color:#FFF4F7;text-align:center;text-decoration:none;font-size:14px;line-height:1.4;padding:10px 16px}
+.natal-bar b{color:#E7C46A}
+.natal-bar span{display:inline-block;margin-left:8px;padding:2px 12px;border-radius:999px;background:#E7C46A;color:#4E0C1D;font-weight:700;font-size:13px}
+.natal-bar:hover{background:#A1203F;color:#fff}
+.chips a.natal{background:#E7C46A;color:#4E0C1D;border-color:#E7C46A;font-weight:700}
 </style>
 <!-- Meta Pixel Le Sartori -->
 <script>
@@ -232,6 +239,7 @@ document.addEventListener('click',function(e){var a=e.target.closest&&e.target.c
 <!-- /Meta Pixel -->
 </head>
 <body>
+<a class="natal-bar" href="aula-de-natal/">🎄 <b>Sua aula de Natal pronta:</b> O Quebra-Nozes de R$ 29,90 por <b>R$ 17,90</b> · bônus dos cartões de aula só até domingo, 16/11 <span>Ver a aula →</span></a>
 
 <header>
   <div class="top">
@@ -249,6 +257,7 @@ document.addEventListener('click',function(e){var a=e.target.closest&&e.target.c
   <nav class="chips" aria-label="O que você procura">
     <div class="in">
       <span>O que você procura?</span>
+      <a class="natal" href="aula-de-natal/">🎄 Aula de Natal pronta · R$ 17,90</a>
       <a class="destaque" href="entre-historias/">Black Friday: Entre Histórias</a>
       <a href="#curso-adulto">Curso para professores</a>
       <a href="#ballet-online">Ballet online</a>
