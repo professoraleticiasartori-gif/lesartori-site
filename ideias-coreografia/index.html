@@ -427,7 +427,7 @@ document.addEventListener('click',function(e){var a=e.target.closest&&e.target.c
           <li>E-book em PDF com acesso imediato</li>
         </ul>
         <a class="btn js-comprar" href="#oferta">Quero meu e-book por R$ 9,90</a>
-        <p class="fine" style="margin-top:14px">Compra pelo WhatsApp da Prof. Le Sartori, com Pix. O PDF chega no seu WhatsApp e no seu e-mail.</p>
+        <p class="fine" style="margin-top:14px">Pagamento seguro pela Hotmart. Assim que o pagamento é aprovado, o acesso ao PDF chega no seu e-mail.</p>
       </div>
       <div class="guarantee">
         <div class="seal">7<small>DIAS</small></div>
@@ -442,7 +442,7 @@ document.addEventListener('click',function(e){var a=e.target.closest&&e.target.c
       <div class="stack center" style="margin-bottom:12px"><h2>Perguntas frequentes</h2></div>
       <details><summary>Serve para a minha turma?</summary><p>Tem ideias para 3 a 5 anos, 6 a 8 anos, 9 a 12 anos e turma adulta. Se a turma tiver idades misturadas, o e-book mostra como escolher e adaptar.</p></details>
       <details><summary>Dá tempo de montar até a apresentação?</summary><p>Sim. O plano de ensaio foi pensado para 4 semanas, com 2 aulas por semana e de 15 a 20 minutos de coreografia em cada aula.</p></details>
-      <details><summary>Como eu recebo?</summary><p>Logo depois da confirmação do pagamento, você recebe o PDF no WhatsApp e no e-mail. Você pode ler no celular, no computador ou imprimir.</p></details>
+      <details><summary>Como eu recebo?</summary><p>Logo depois da confirmação do pagamento, você recebe o acesso ao PDF no seu e-mail, pela Hotmart. Você pode ler no celular, no computador ou imprimir.</p></details>
     </div>
   </section>
 </main>
@@ -453,7 +453,6 @@ document.addEventListener('click',function(e){var a=e.target.closest&&e.target.c
     <div class="contacts">
       <span>lesartori.com.br</span>
       <span>Instagram @prof.lesartori</span>
-      <span>WhatsApp (13) 97418-9463</span>
       <span>professoraleticiasartori@gmail.com</span>
     </div>
   </div>
@@ -465,11 +464,9 @@ document.addEventListener('click',function(e){var a=e.target.closest&&e.target.c
 </div>
 
 <script>
-  /* Cole aqui o link de checkout da Hotmart quando o produto estiver aprovado.
-     Enquanto estiver vazio, a compra é feita pelo WhatsApp da Prof. Le Sartori. */
-  const CHECKOUT_URL = "";
-  const WHATS = "https://wa.me/5513974189463?text=" + encodeURIComponent("Oi, Prof. Le! Quero comprar o e-book Ideias para sua Coreografia por R$ 9,90.");
-  document.querySelectorAll(".js-comprar").forEach(a => { a.href = CHECKOUT_URL || WHATS; a.target = "_blank"; a.rel = "noopener"; });
+  /* Checkout Hotmart do e-book Ideias para sua Coreografia (produto 8914703). */
+  const CHECKOUT_URL = "https://pay.hotmart.com/I108389474G?off=kc3gz6yl";
+  document.querySelectorAll(".js-comprar").forEach(a => { a.href = CHECKOUT_URL; a.target = "_blank"; a.rel = "noopener"; });
 </script>
 
 <!-- Estrelinhas caindo -->
