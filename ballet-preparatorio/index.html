@@ -167,26 +167,15 @@ footer img{width:130px;margin:0 auto 12px;filter:brightness(0) invert(1)}
 @keyframes twinkle{0%,100%{transform:scale(1) rotate(0)}50%{transform:scale(1.25) rotate(20deg)}}
 .sparkle{animation:twinkle 3s ease-in-out infinite}
 </style>
-<!-- Meta Pixel (Pixel Le Sartori) -->
+<!-- Meta Pixel Le Sartori -->
 <script>
-!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-document,'script','https://connect.facebook.net/en_US/fbevents.js');
-fbq('init','1359859169419420');
-fbq('track','PageView');
-fbq('track','ViewContent',{content_name:'Ballet Preparatorio 7 e 8 anos',content_type:'product',value:27,currency:'BRL'});
-document.addEventListener('DOMContentLoaded',function(){
-  var q=location.search.replace(/^\?/,'');
-  document.querySelectorAll('a[href*="pay.hotmart.com"]').forEach(function(a){
-    if(q){a.href+= (a.href.indexOf('?')>-1?'&':'?')+q;}
-    a.addEventListener('click',function(){fbq('trackCustom','CliqueComprar',{value:27,currency:'BRL'});});
-  });
-});
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','1273662791544287');fbq('track','PageView');
+document.addEventListener('DOMContentLoaded',function(){if(document.querySelector('a[href*="pay.hotmart.com"],a[href*="pay.kiwify"]'))fbq('track','ViewContent');});
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href*="pay.hotmart.com"],a[href*="pay.kiwify"]');if(a)fbq('track','InitiateCheckout');},true);
 </script>
-<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1359859169419420&ev=PageView&noscript=1"/></noscript>
-<!-- Fim Meta Pixel -->
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1273662791544287&ev=PageView&noscript=1"/></noscript>
+<!-- /Meta Pixel -->
 </head>
 <body>
 
