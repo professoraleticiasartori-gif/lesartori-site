@@ -92,5 +92,78 @@ document.addEventListener('click',function(e){var a=e.target.closest&&e.target.c
   <img src="logo-le-sartori.png" alt="Le Sartori" width="320" height="117" style="height:44px;width:auto">
   <span>© 2026 Prof. Le Sartori · Todos os direitos reservados</span>
 </div></footer>
+<!-- NATAL LE SARTORI: neve e enfeites. Some sozinho a partir de 07/01/2027. Para tirar antes, apague este bloco inteiro. -->
+<style>
+.natal-neve{position:fixed;inset:0;pointer-events:none;z-index:60;overflow:hidden}
+.natal-neve i{position:absolute;top:-30px;color:#CFDDEA;text-shadow:0 0 4px #fff,0 0 1px #9FB3C8;font-style:normal;line-height:1;animation:natalCai linear infinite}
+@keyframes natalCai{0%{transform:translate3d(0,-30px,0) rotate(0)}50%{transform:translate3d(18px,50vh,0) rotate(180deg)}100%{transform:translate3d(-12px,105vh,0) rotate(360deg)}}
+.natal-varal{position:absolute;left:0;right:0;bottom:-16px;height:22px;pointer-events:none;z-index:5;overflow:hidden}
+.natal-varal svg{display:block;width:100%;height:22px}
+.natal-varal .l{animation:natalPisca 2.4s ease-in-out infinite}
+.natal-varal .l:nth-child(3n){animation-delay:-.8s}.natal-varal .l:nth-child(3n+1){animation-delay:-1.6s}
+@keyframes natalPisca{0%,100%{opacity:1}50%{opacity:.35}}
+.natal-enfeite{position:absolute;top:0;width:46px;pointer-events:none;z-index:4;transform-origin:50% 0;animation:natalBalanca 4s ease-in-out infinite}
+.natal-enfeite.dir{right:4%}.natal-enfeite.esq{left:4%;animation-delay:-2s}
+.natal-enfeite svg{display:block;width:100%;height:auto}
+@keyframes natalBalanca{0%,100%{transform:rotate(-5deg)}50%{transform:rotate(5deg)}}
+.natal-rodape{text-align:center;padding:10px 0 0;pointer-events:none}
+.natal-rodape svg{width:120px;height:auto}
+@media (max-width:640px){.natal-enfeite{width:34px}.natal-enfeite.esq{display:none}}
+@media (prefers-reduced-motion:reduce){.natal-neve{display:none}.natal-enfeite,.natal-varal .l{animation:none}}
+</style>
+<script>
+(function(){
+  if(new Date()>=new Date('2027-01-07T00:00:00-03:00'))return;
+  var cores=['#A3165A','#C9A14A','#4A1230','#F2A9C2','#2E7D5B'];
+  function bola(c,alto){
+    return '<svg viewBox="0 0 46 '+(alto+46)+'" aria-hidden="true"><line x1="23" y1="0" x2="23" y2="'+alto+'" stroke="#C9A14A" stroke-width="1.5"/>'+
+      '<rect x="18" y="'+alto+'" width="10" height="7" rx="2" fill="#C9A14A"/>'+
+      '<circle cx="23" cy="'+(alto+24)+'" r="17" fill="'+c+'"/>'+
+      '<path d="M8 '+(alto+22)+' q15 7 30 0" stroke="#fff" stroke-opacity=".55" stroke-width="2.5" fill="none"/>'+
+      '<circle cx="16" cy="'+(alto+17)+'" r="4" fill="#fff" fill-opacity=".45"/></svg>';
+  }
+  function estrela(alto){
+    return '<svg viewBox="0 0 46 '+(alto+46)+'" aria-hidden="true"><line x1="23" y1="0" x2="23" y2="'+alto+'" stroke="#C9A14A" stroke-width="1.5"/>'+
+      '<path d="M23 '+(alto+2)+' l6 13 14 2 -10 10 2 14 -12-7 -12 7 2-14 -10-10 14-2z" fill="#C9A14A" stroke="#fff" stroke-opacity=".6"/></svg>';
+  }
+  // varal de luzes embaixo do topo
+  var head=document.querySelector('header');
+  if(head){
+    if(getComputedStyle(head).position==='static')head.style.position='relative';
+    var w=1200,n=30,s='<svg viewBox="0 0 '+w+' 22" preserveAspectRatio="none" aria-hidden="true"><path d="M0 4 '+
+      Array.from({length:n},function(_,i){var x=(i+1)*w/n;return 'Q'+(x-w/n/2)+' 14 '+x+' 4';}).join(' ')+'" stroke="#2E5D45" stroke-width="1.5" fill="none"/>';
+    for(var i=0;i<n;i++){var x=(i+.5)*w/n;s+='<ellipse class="l" cx="'+x+'" cy="15" rx="4" ry="6" fill="'+cores[i%cores.length]+'"/>';}
+    s+='</svg>';
+    var v=document.createElement('div');v.className='natal-varal';v.innerHTML=s;head.appendChild(v);
+  }
+  // enfeites pendurados no alto de cada parte do site
+  var secs=document.querySelectorAll('main > section, main > article'),k=0;if(!secs.length)secs=document.querySelectorAll('main');
+  secs.forEach(function(sec,idx){
+    if(sec.classList.contains('lanc'))return;
+    if(getComputedStyle(sec).position==='static')sec.style.position='relative';
+    var lados=idx%2?['dir']:['esq','dir'];
+    lados.forEach(function(lado){
+      var e=document.createElement('div');e.className='natal-enfeite '+lado;
+      var alto=20+((k*17)%40);
+      e.innerHTML=(k%3===2)?estrela(alto):bola(cores[k%cores.length],alto);k++;
+      sec.appendChild(e);
+    });
+  });
+  // azevinho no rodapé
+  var ft=document.querySelector('footer');
+  if(ft){var r=document.createElement('div');r.className='natal-rodape';
+    r.innerHTML='<svg viewBox="0 0 120 50" aria-hidden="true"><path d="M60 26 C40 6 18 10 8 20 C20 22 24 30 22 40 C34 30 48 32 60 26Z" fill="#2E7D5B"/><path d="M60 26 C80 6 102 10 112 20 C100 22 96 30 98 40 C86 30 72 32 60 26Z" fill="#2E7D5B"/><circle cx="54" cy="26" r="6" fill="#A3165A"/><circle cx="66" cy="26" r="6" fill="#A3165A"/><circle cx="60" cy="17" r="6" fill="#C2185B"/></svg>';
+    ft.insertBefore(r,ft.firstChild);}
+  // neve caindo
+  if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  var neve=document.createElement('div');neve.className='natal-neve';neve.setAttribute('aria-hidden','true');
+  var qtd=window.innerWidth<640?22:42,simb=['❄','❅','❆','•'];
+  for(var j=0;j<qtd;j++){var f=document.createElement('i');f.textContent=simb[j%simb.length];
+    f.style.left=(Math.random()*100)+'%';f.style.fontSize=(8+Math.random()*14)+'px';f.style.opacity=(.55+Math.random()*.45).toFixed(2);
+    f.style.animationDuration=(9+Math.random()*12).toFixed(1)+'s';f.style.animationDelay=(-Math.random()*20).toFixed(1)+'s';neve.appendChild(f);}
+  document.body.appendChild(neve);
+})();
+</script>
+<!-- FIM NATAL -->
 </body>
 </html>
