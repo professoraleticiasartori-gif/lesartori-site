@@ -39,6 +39,18 @@ header.hero{background:radial-gradient(120% 90% at 80% 10%,#9A1F3B 0%,var(--vinh
 .btn.alt{background:#fff;color:var(--vinho)}
 .btns{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 12px}
 .mini{font-size:13px;color:#F3DFAE}
+.qual{font-size:14px;color:#F7EDEE;margin:-2px 0 12px}
+.qual b{color:#F3DFAE}
+.autor{display:flex;align-items:center;gap:10px;font-size:13px;color:#F3DFAE;margin:0 0 16px}
+.autor img{width:38px;height:38px;border-radius:50%;object-fit:cover;border:2px solid var(--ouro)}
+.stack{background:rgba(0,0,0,.18);border:1px solid rgba(201,162,75,.45);border-radius:14px;padding:14px 16px;margin:16px 0 0}
+.stack h3{font-size:22px;color:#F3DFAE;margin-bottom:8px}
+.stack ul{list-style:none;padding:0;margin:0;display:grid;gap:6px;font-size:15px}
+.stack li{padding-left:24px;position:relative}
+.stack li::before{content:'✓';position:absolute;left:0;color:var(--ouro);font-weight:800}
+.stack li b{color:#fff}
+#cd{font-variant-numeric:tabular-nums}
+.garantia.inline{margin-top:26px}
 .covers{position:relative;display:flex;justify-content:center;gap:0}
 .covers img{width:52%;border-radius:10px;box-shadow:0 18px 40px rgba(0,0,0,.45)}
 .covers img+img{margin-left:-16%;transform:translateY(22px) rotate(4deg)}
@@ -110,7 +122,7 @@ document.addEventListener('click',function(e){var a=e.target.closest&&e.target.c
 </head>
 <body>
 
-<div class="top">BLACK FRIDAY LE SARTORI · de <s>R$ 29,90</s> por <b>R$ 17,90</b> · bônus só até sexta, 20/11</div>
+<div class="top">BLACK FRIDAY · de <s>R$ 29,90</s> por <b>R$ 17,90</b> · bônus termina em <b id="cd">sexta, 20/11</b></div>
 
 <header class="hero">
   <div class="wrap">
@@ -119,13 +131,21 @@ document.addEventListener('click',function(e){var a=e.target.closest&&e.target.c
       <span class="kicker">Entre Histórias · O Quebra-Nozes</span>
       <h1>Sua aula de Natal <em>já está pronta.</em></h1>
       <p class="sub">O Quebra-Nozes contado como história e transformado em aula de ballet, com começo, meio e fim, para você só chegar e dar.</p>
+      <div class="autor"><img src="../le-sartori-retrato.jpg" alt="">Criado pela Prof. Le Sartori · 30 anos de ballet · diretora da LENDA</div>
       <div class="price"><s>R$ 29,90</s><strong>R$ 17,90</strong><span>ou 5x de R$ 3,96 · PDF na hora</span></div>
       <div class="btns">
-        <a class="btn" href="https://pay.hotmart.com/C108376581T?off=yjrp8dlb&checkoutMode=10">Baby Class · 3 a 6 anos</a>
-        <a class="btn alt" href="https://pay.hotmart.com/F108376612U?off=4nxu0b8h&checkoutMode=10">Pré-Ballet · 7 e 8 anos</a>
+        <a class="btn" href="https://pay.hotmart.com/C108376581T?off=yjrp8dlb&checkoutMode=10">Comprar Baby Class (3 a 6) →</a>
+        <a class="btn alt" href="https://pay.hotmart.com/F108376612U?off=4nxu0b8h&checkoutMode=10">Comprar Pré-Ballet (7 e 8) →</a>
       </div>
-      <div class="mini">Pagamento seguro pela Hotmart · Pix, cartão ou boleto · 7 dias de garantia</div>
-      <div class="bonus"><b>Bônus até sexta (20/11):</b> os cartões de aula para imprimir, com cada cena em um cartão para você usar na sala.</div>
+      <p class="qual">Não sabe qual? Turma até 6 anos: <b>Baby Class</b>. Turma de 7 e 8 anos: <b>Pré-Ballet</b>.</p>
+      <div class="mini">PDF no seu e-mail em minutos · Pix, cartão ou boleto · 7 dias de garantia pela Hotmart</div>
+      <div class="stack"><h3>Tudo isso por R$ 17,90</h3><ul>
+        <li><b>O conto do Quebra-Nozes</b> para ler às alunas</li>
+        <li><b>A aula completa em 6 cenas</b>, com tempo, música e objetivo de cada uma</li>
+        <li><b>5 desenhos para colorir</b> para fechar a aula</li>
+        <li><b>Certificado</b> para entregar às alunas</li>
+        <li><b>Bônus até sexta (20/11):</b> cartões de aula para imprimir</li>
+      </ul></div>
     </div>
     <div class="covers">
       <img src="../entre-historias/img/capa_quebranozes_baby.jpg" alt="Capa O Quebra-Nozes Baby Class">
@@ -146,6 +166,7 @@ document.addEventListener('click',function(e){var a=e.target.closest&&e.target.c
       <figure class="wide"><img src="img/cartao.jpg" alt="Cartões de aula para imprimir" loading="lazy"><figcaption><b>Bônus: cartões de aula</b>Cada cena em um cartão, para imprimir e usar na sala</figcaption></figure>
     </div>
     <p class="hint">← arraste para ver mais →</p>
+    <div class="garantia inline"><div class="selo">7 DIAS<br>de garantia</div><p style="margin:0">Comprou e não serviu para a sua turma? Você pede o reembolso direto na Hotmart em até 7 dias, sem precisar explicar.</p></div>
   </div>
 </section>
 
@@ -183,27 +204,27 @@ document.addEventListener('click',function(e){var a=e.target.closest&&e.target.c
 
 <section id="ofertas" class="dor">
   <div class="wrap">
-    <div class="sec-t"><h2>Escolha a sua</h2><p>Preço de Black Friday. Depois, cada ebook volta a custar R$ 29,90.</p></div>
+    <div class="sec-t"><h2>Escolha a sua</h2><p>Turma até 6 anos: Baby Class. Turma de 7 e 8 anos: Pré-Ballet. Preço de Black Friday; depois, cada ebook volta a R$ 29,90.</p></div>
     <div class="offers">
       <div class="offer">
         <img src="../entre-historias/img/capa_quebranozes_baby.jpg" alt="">
         <h3>Baby Class</h3><div class="de">3 a 6 anos · 1 aula em 6 cenas</div>
         <div class="de"><s>R$ 29,90</s></div><div class="p">R$ 17,90</div>
-        <a class="btn" href="https://pay.hotmart.com/C108376581T?off=yjrp8dlb&checkoutMode=10">Quero o Baby Class</a>
+        <a class="btn" href="https://pay.hotmart.com/C108376581T?off=yjrp8dlb&checkoutMode=10">Comprar Baby Class</a>
       </div>
+      <div class="offer">
+        <img src="../entre-historias/img/capa_quebranozes_pre.jpg" alt="">
+        <h3>Pré-Ballet</h3><div class="de">7 e 8 anos · 2 aulas + coreografia</div>
+        <div class="de"><s>R$ 29,90</s></div><div class="p">R$ 17,90</div>
+        <a class="btn" href="https://pay.hotmart.com/F108376612U?off=4nxu0b8h&checkoutMode=10">Comprar Pré-Ballet</a>
+      
       <div class="offer main">
         <span class="tag">Mais completo</span>
         <h3>Os 8 ebooks</h3><div class="de">Coppélia, Esmeralda, Napoli e O Quebra-Nozes · Baby e Pré</div>
         <div class="de">Avulsos sairiam R$ 239,20</div><div class="p">R$ 97</div>
         <div class="de">Um semestre inteiro de aulas de repertório</div>
         <a class="btn" href="https://pay.hotmart.com/Y108376743N?off=3u4vutqi">Quero os 8 ebooks</a>
-      </div>
-      <div class="offer">
-        <img src="../entre-historias/img/capa_quebranozes_pre.jpg" alt="">
-        <h3>Pré-Ballet</h3><div class="de">7 e 8 anos · 2 aulas + coreografia</div>
-        <div class="de"><s>R$ 29,90</s></div><div class="p">R$ 17,90</div>
-        <a class="btn" href="https://pay.hotmart.com/F108376612U?off=4nxu0b8h&checkoutMode=10">Quero o Pré-Ballet</a>
-      </div>
+      </div></div>
     </div>
   </div>
 </section>
@@ -239,8 +260,11 @@ document.addEventListener('click',function(e){var a=e.target.closest&&e.target.c
 <footer><div class="wrap">© 2026 Le Sartori · <a href="https://lesartori.com.br/">lesartori.com.br</a> · <a href="../entre-historias/">ver a coleção Entre Histórias</a></div></footer>
 
 <div class="sticky">
-  <div class="t">O Quebra-Nozes · aula de Natal<b>R$ 17,90</b></div>
-  <a class="btn" href="#ofertas">Escolher minha aula</a>
+  <div class="t">Aula de Natal pronta · <s>R$ 29,90</s><b>R$ 17,90</b></div>
+  <a class="btn" href="#ofertas">Comprar agora</a>
 </div>
+<script>
+(function(){var end=new Date('2026-11-20T23:59:59-03:00').getTime(),el=document.getElementById('cd');if(!el)return;function t(){var d=end-Date.now();if(d<=0){el.textContent='hoje';return}var D=Math.floor(d/864e5),H=Math.floor(d%864e5/36e5),M=Math.floor(d%36e5/6e4);el.textContent=(D?D+'d ':'')+H+'h '+M+'min'}t();setInterval(t,30000)})();
+</script>
 </body>
 </html>
