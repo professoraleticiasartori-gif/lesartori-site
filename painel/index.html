@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Painel Le Sartori</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&amp;family=Montserrat:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+:root{--vinho:#4A1230;--magenta:#A3165A;--rosa:#F2A9C2;--rosa-claro:#F7E1E8;--creme:#FBF5F1;--linha:#EAD3DC;--texto:#3F2A35;--suave:#6B5562;--ok:#2E7D5B;--alerta:#B7791F;--ruim:#B4233C;--branco:#fff}
+*{box-sizing:border-box}
+body{margin:0;background:var(--creme);color:var(--texto);font-family:'Montserrat',system-ui,sans-serif;line-height:1.5}
+h1,h2,h3{font-family:'Playfair Display',Georgia,serif;font-weight:600;color:var(--vinho);margin:0;text-wrap:balance}
+.wrap{max-width:1100px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+button,input{font:inherit}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 24px;border-radius:999px;border:0;background:var(--magenta);color:#fff;font-weight:600;cursor:pointer}
+.btn:hover{background:#7A0D3B}.btn:focus-visible,input:focus-visible,.tab:focus-visible{outline:3px solid var(--rosa);outline-offset:2px}
+.btn.sec{background:transparent;color:var(--magenta);border:1.5px solid var(--magenta)}
+.link{background:none;border:0;color:var(--magenta);text-decoration:underline;cursor:pointer;padding:6px 0}
+/* acesso */
+.acesso{min-height:100vh;display:grid;place-items:center;padding-block:32px}
+.caixa{width:100%;max-width:420px;background:var(--branco);border:1px solid var(--linha);border-radius:20px;padding:32px 28px;display:grid;gap:16px}
+.caixa img{height:52px;width:auto;margin:0 auto}
+.caixa h1{font-size:28px;text-align:center}
+.caixa p{margin:0;color:var(--suave);font-size:14px;text-align:center}
+label{display:grid;gap:6px;font-size:14px;font-weight:600}
+input[type=text],input[type=password]{min-height:48px;border:1.5px solid var(--linha);border-radius:12px;padding:0 14px;background:var(--creme);color:var(--texto)}
+.erro{color:var(--ruim);font-size:14px;text-align:center;margin:0}
+.ok-msg{color:var(--ok);font-size:14px}
+textarea{width:100%;min-height:120px;border:1.5px solid var(--linha);border-radius:12px;padding:10px;font:12px/1.4 ui-monospace,monospace;background:var(--creme)}
+/* painel */
+.topo{background:var(--vinho);color:#fff}
+.topo .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;padding-block:16px}
+.topo h1{color:#fff;font-size:24px}
+.topo small{display:block;color:var(--rosa);font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+.topo .acoes{display:flex;gap:10px;flex-wrap:wrap}
+.topo .btn.sec{color:#fff;border-color:var(--rosa);min-height:40px;padding:0 16px}
+.abas{background:var(--branco);border-bottom:1px solid var(--linha);position:sticky;top:0;z-index:5}
+.abas .wrap{display:flex;gap:4px;overflow-x:auto}
+.tab{border:0;background:none;padding:14px 16px;font-weight:600;color:var(--suave);border-bottom:3px solid transparent;cursor:pointer;white-space:nowrap}
+.tab[aria-selected=true]{color:var(--magenta);border-bottom-color:var(--magenta)}
+main.wrap{padding-block:28px 64px;display:grid;gap:28px}
+.resumo{margin:0;font-size:17px}
+.grade{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+.cartao{background:var(--branco);border:1px solid var(--linha);border-radius:16px;padding:20px;display:grid;gap:6px;min-width:0}
+.cartao .rot{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--suave)}
+.cartao .num{font-family:'Playfair Display',serif;font-size:38px;line-height:1.1;color:var(--vinho);font-variant-numeric:tabular-nums}
+.cartao .det{font-size:13px;color:var(--suave)}
+section h2{font-size:24px;margin-bottom:12px}
+.tabela{overflow-x:auto;background:var(--branco);border:1px solid var(--linha);border-radius:16px}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{text-align:left;padding:12px 14px;border-bottom:1px solid var(--linha);vertical-align:top}
+th{font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--suave);background:var(--rosa-claro)}
+tr:last-child td{border-bottom:0}
+td.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.pill{display:inline-block;padding:3px 10px;border-radius:999px;font-size:12px;font-weight:600;white-space:nowrap}
+.p-ok{background:#E3F2EA;color:var(--ok)}.p-alerta{background:#FBF0DC;color:var(--alerta)}.p-ruim{background:#F9E1E5;color:var(--ruim)}.p-info{background:var(--rosa-claro);color:var(--magenta)}
+.lista{display:grid;gap:10px}
+.item{background:var(--branco);border:1px solid var(--linha);border-radius:14px;padding:14px 16px;display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:start}
+.item input{width:22px;height:22px;margin-top:2px;accent-color:var(--magenta)}
+.item .data{font-size:12px;font-weight:600;color:var(--magenta)}
+.item.feito .txt{text-decoration:line-through;color:var(--suave)}
+.nota{font-size:13px;color:var(--suave);margin:0}
+/* pop-up */
+.fundo{position:fixed;inset:0;background:rgba(40,10,25,.55);display:grid;place-items:center;padding:16px;z-index:20}
+.pop{background:var(--branco);border-radius:20px;max-width:520px;width:100%;max-height:85vh;overflow:auto;padding:24px;display:grid;gap:14px}
+.pop h2{font-size:24px}
+.pop ul{margin:0;padding-left:20px;display:grid;gap:8px}
+.pop li b{color:var(--magenta)}
+@media (max-width:520px){.cartao .num{font-size:32px}.caixa{padding:24px 18px}}
+@media (prefers-reduced-motion:no-preference){.pop{animation:sobe .25s ease-out}@keyframes sobe{from{transform:translateY(12px);opacity:.6}to{transform:none;opacity:1}}}
+</style>
+</head>
+<body>
+
+<!-- ENTRAR -->
+<div class="acesso wrap" id="tela-entrar">
+  <form class="caixa" id="form-entrar" autocomplete="on">
+    <img src="../logo-le-sartori.png" alt="Le Sartori">
+    <h1>Painel Le Sartori</h1>
+    <p>Área restrita da Prof. Le Sartori.</p>
+    <label>CPF<input type="text" id="cpf" inputmode="numeric" autocomplete="username" placeholder="000.000.000-00" required></label>
+    <label>Senha<input type="password" id="senha" autocomplete="current-password" required></label>
+    <p class="erro" id="erro-entrar" hidden></p>
+    <button class="btn" type="submit" id="bt-entrar">Entrar</button>
+    <button class="link" type="button" id="ir-criar">Primeiro acesso ou trocar a senha</button>
+  </form>
+</div>
+
+<!-- CRIAR ACESSO -->
+<div class="acesso wrap" id="tela-criar" hidden>
+  <form class="caixa" id="form-criar">
+    <img src="../logo-le-sartori.png" alt="Le Sartori">
+    <h1>Criar acesso</h1>
+    <p>Escolha a senha do painel. Ela nunca sai do seu aparelho: nem o Claude nem o site ficam sabendo dela.</p>
+    <label>CPF<input type="text" id="cpf2" inputmode="numeric" autocomplete="username" placeholder="000.000.000-00" required></label>
+    <label>Senha (mínimo 10 caracteres)<input type="password" id="senha2" autocomplete="new-password" minlength="10" required></label>
+    <label>Repita a senha<input type="password" id="senha3" autocomplete="new-password" minlength="10" required></label>
+    <p class="erro" id="erro-criar" hidden></p>
+    <button class="btn" type="submit" id="bt-criar">Criar meu acesso</button>
+    <div id="resultado" hidden>
+      <p class="ok-msg"><b>Pronto!</b> Agora copie o código abaixo e cole no chat do Claude. Ele é a sua "fechadura" e não revela a senha.</p>
+      <textarea id="codigo" readonly></textarea>
+      <button class="btn sec" type="button" id="bt-copiar">Copiar código</button>
+    </div>
+    <button class="link" type="button" id="voltar">Voltar para entrar</button>
+  </form>
+</div>
+
+<!-- PAINEL -->
+<div id="tela-painel" hidden>
+  <header class="topo"><div class="wrap">
+    <div><small>Painel</small><h1>Le Sartori</h1></div>
+    <div class="acoes">
+      <button class="btn sec" type="button" id="bt-avisos">Avisos</button>
+      <button class="btn sec" type="button" id="bt-sair">Sair</button>
+    </div>
+  </div></header>
+  <nav class="abas" aria-label="Seções do painel"><div class="wrap" role="tablist">
+    <button class="tab" role="tab" data-aba="geral" aria-selected="true">Visão geral</button>
+    <button class="tab" role="tab" data-aba="cursos" aria-selected="false">Cursos</button>
+    <button class="tab" role="tab" data-aba="marketing" aria-selected="false">Marketing</button>
+    <button class="tab" role="tab" data-aba="afazeres" aria-selected="false">Afazeres</button>
+  </div></nav>
+  <main class="wrap" id="conteudo"></main>
+</div>
+
+<!-- POP-UP -->
+<div class="fundo" id="pop" hidden>
+  <div class="pop" role="dialog" aria-modal="true" aria-labelledby="pop-tit">
+    <h2 id="pop-tit">Para fazer agora</h2>
+    <ul id="pop-lista"></ul>
+    <button class="btn" type="button" id="pop-ok">Entendi</button>
+  </div>
+</div>
+
+<script>
+(function(){
+const $=s=>document.querySelector(s);
+const b64=u=>btoa(String.fromCharCode(...new Uint8Array(u)));
+const unb64=s=>Uint8Array.from(atob(s),c=>c.charCodeAt(0));
+const soDig=s=>(s||'').replace(/\D/g,'');
+function cpfValido(c){if(c.length!==11||/^(\d)\1+$/.test(c))return false;for(let t=9;t<11;t++){let s=0;for(let i=0;i<t;i++)s+=+c[i]*(t+1-i);if(((s*10)%11)%10!==+c[t])return false;}return true;}
+function mascara(el){el.addEventListener('input',()=>{const d=soDig(el.value).slice(0,11);el.value=d.replace(/(\d{3})(\d)/,'$1.$2').replace(/(\d{3})\.(\d{3})(\d)/,'$1.$2.$3').replace(/(\d{3})-?(\d{1,2})$/,'$1-$2').replace(/^(\d{3}\.\d{3}\.\d{3})(\d)/,'$1-$2');});}
+mascara($('#cpf'));mascara($('#cpf2'));
+const enc=new TextEncoder();
+async function chaveDaSenha(cpf,senha,salt,iter){
+  const base=await crypto.subtle.importKey('raw',enc.encode(cpf+':'+senha),'PBKDF2',false,['deriveKey']);
+  return crypto.subtle.deriveKey({name:'PBKDF2',salt,iterations:iter,hash:'SHA-256'},base,{name:'AES-GCM',length:256},false,['encrypt','decrypt']);
+}
+function mostra(id){['#tela-entrar','#tela-criar','#tela-painel'].forEach(s=>{$(s).hidden=(s!==id);});}
+$('#ir-criar').onclick=()=>mostra('#tela-criar');
+$('#voltar').onclick=()=>mostra('#tela-entrar');
+
+// criar acesso
+$('#form-criar').addEventListener('submit',async e=>{
+  e.preventDefault();const er=$('#erro-criar');er.hidden=true;
+  const cpf=soDig($('#cpf2').value),s=$('#senha2').value;
+  if(!cpfValido(cpf)){er.textContent='Confira o CPF: algum número está errado.';er.hidden=false;return;}
+  if(s.length<10){er.textContent='A senha precisa ter pelo menos 10 caracteres.';er.hidden=false;return;}
+  if(s!==$('#senha3').value){er.textContent='As duas senhas não são iguais.';er.hidden=false;return;}
+  $('#bt-criar').disabled=true;$('#bt-criar').textContent='Criando…';
+  try{
+    const iter=600000,salt=crypto.getRandomValues(new Uint8Array(16)),iv=crypto.getRandomValues(new Uint8Array(12));
+    const par=await crypto.subtle.generateKey({name:'RSA-OAEP',modulusLength:3072,publicExponent:new Uint8Array([1,0,1]),hash:'SHA-256'},true,['encrypt','decrypt']);
+    const priv=await crypto.subtle.exportKey('pkcs8',par.privateKey),pub=await crypto.subtle.exportKey('spki',par.publicKey);
+    const k=await chaveDaSenha(cpf,s,salt,iter);
+    const privEnc=await crypto.subtle.encrypt({name:'AES-GCM',iv},k,priv);
+    $('#codigo').value=JSON.stringify({v:1,iter,salt:b64(salt),iv:b64(iv),priv:b64(privEnc),pub:b64(pub)});
+    $('#resultado').hidden=false;$('#bt-criar').hidden=true;
+  }catch(err){er.textContent='Não deu certo neste navegador. Tente pelo Chrome atualizado.';er.hidden=false;$('#bt-criar').disabled=false;$('#bt-criar').textContent='Criar meu acesso';}
+});
+$('#bt-copiar').onclick=async()=>{const t=$('#codigo');try{await navigator.clipboard.writeText(t.value);$('#bt-copiar').textContent='Copiado!';}catch{t.select();$('#bt-copiar').textContent='Selecionado: aperte Ctrl+C';}};
+
+// entrar
+$('#form-entrar').addEventListener('submit',async e=>{
+  e.preventDefault();const er=$('#erro-entrar');er.hidden=true;
+  const cpf=soDig($('#cpf').value),s=$('#senha').value;const bt=$('#bt-entrar');
+  bt.disabled=true;bt.textContent='Abrindo…';
+  try{
+    const ch=await (await fetch('chave.json?'+Date.now(),{cache:'no-store'})).json().catch(()=>null);
+    if(!ch){throw new Error('semchave');}
+    const k=await chaveDaSenha(cpf,s,unb64(ch.salt),ch.iter);
+    let priv;try{priv=await crypto.subtle.decrypt({name:'AES-GCM',iv:unb64(ch.iv)},k,unb64(ch.priv));}catch{throw new Error('senha');}
+    const pk=await crypto.subtle.importKey('pkcs8',priv,{name:'RSA-OAEP',hash:'SHA-256'},false,['decrypt']);
+    const d=await (await fetch('dados.json?'+Date.now(),{cache:'no-store'})).json();
+    const kd=await crypto.subtle.decrypt({name:'RSA-OAEP'},pk,unb64(d.ek));
+    const ka=await crypto.subtle.importKey('raw',kd,'AES-GCM',false,['decrypt']);
+    const txt=await crypto.subtle.decrypt({name:'AES-GCM',iv:unb64(d.iv)},ka,unb64(d.ct));
+    $('#senha').value='';
+    abrir(JSON.parse(new TextDecoder().decode(txt)));
+  }catch(err){
+    er.textContent=err.message==='senha'?'CPF ou senha não conferem.':err.message==='semchave'?'O acesso ainda não foi criado. Use "Primeiro acesso".':'Não consegui abrir o painel agora. Tente de novo em instantes.';
+    er.hidden=false;
+  }finally{bt.disabled=false;bt.textContent='Entrar';}
+});
+
+// painel
+let D=null;
+const brl=v=>v.toLocaleString('pt-BR',{style:'currency',currency:'BRL'});
+const el=(t,c,txt)=>{const e=document.createElement(t);if(c)e.className=c;if(txt!=null)e.textContent=txt;return e;};
+function feitos(){try{return JSON.parse(localStorage.getItem('painel-feitos')||'{}');}catch{return {};}}
+function marcar(id,v){const f=feitos();if(v)f[id]=1;else delete f[id];try{localStorage.setItem('painel-feitos',JSON.stringify(f));}catch{}}
+function pill(t,tipo){return el('span','pill p-'+(tipo||'info'),t);}
+function cartao(rot,num,det){const c=el('div','cartao');c.append(el('span','rot',rot),el('span','num',num));if(det)c.append(el('span','det',det));return c;}
+function tabela(cols,linhas){const w=el('div','tabela'),t=el('table'),th=el('thead'),tr=el('tr');cols.forEach(c=>{const h=el('th',c.n?'n':'',c.t);tr.append(h);});th.append(tr);const tb=el('tbody');linhas.forEach(l=>{const r=el('tr');l.forEach((v,i)=>{const td=el('td',cols[i].n?'n':'');if(v instanceof Node)td.append(v);else td.textContent=v;r.append(td);});tb.append(r);});t.append(th,tb);w.append(t);return w;}
+function sec(tit,...filhos){const s=el('section');s.append(el('h2',null,tit),...filhos);return s;}
+const hoje=()=>{const d=new Date();return new Date(d.getFullYear(),d.getMonth(),d.getDate());};
+const dataBR=s=>{const [d,m,a]=s.split('/').map(Number);return new Date(a,m-1,d);};
+
+const abas={
+geral(){
+  const h=D.hotmart,p=D.presencial,f=feitos();
+  const pend=D.afazeres.filter(a=>!f[a.id]).length;
+  const frag=document.createDocumentFragment();
+  const r=el('p','resumo');r.textContent='Nos últimos 30 dias a Hotmart teve '+h.vendas+' vendas aprovadas ('+brl(h.receita)+' líquidos). O curso presencial tem '+p.inscritas+' inscritas, '+p.pagas+' já pagas.';
+  const g=el('div','grade');
+  g.append(cartao('Vendas Hotmart',String(h.vendas),h.periodo),cartao('Receita líquida',brl(h.receita),'o que cai para você'),cartao('Inscritas no presencial',String(p.inscritas),p.pagas+' pagas · '+p.time+' Time LENDA · '+p.aPagar+' a pagar'),cartao('Afazeres abertos',String(pend),'veja a aba Afazeres'));
+  frag.append(r,g,
+    sec('Vendas por produto (Hotmart)',tabela([{t:'Produto'},{t:'Vendas',n:1},{t:'Líquido',n:1}],h.produtos.map(x=>[x.nome,String(x.vendas),brl(x.liquido)])),el('p','nota',h.nota)),
+    sec(p.curso,tabela([{t:'Inscrita'},{t:'Situação'}],p.lista.map(x=>[x.nome,pill(x.status,x.tipo)])),el('p','nota',p.nota)));
+  return frag;
+},
+cursos(){
+  const frag=document.createDocumentFragment();
+  frag.append(sec('Ativos (à venda agora)',tabela([{t:'Curso / produto'},{t:'Preço'},{t:'Até'},{t:'Página'}],D.cursos.ativos.map(c=>[c.nome,c.preco,c.ate||'—',c.pagina]))),
+    sec('Por vir',tabela([{t:'Curso / produto'},{t:'Quando'},{t:'Situação'}],D.cursos.porVir.map(c=>[c.nome,c.quando,pill(c.status,c.tipo)]))));
+  return frag;
+},
+marketing(){
+  const frag=document.createDocumentFragment(),h=hoje();
+  frag.append(sec('Blog: um post toda terça e sexta',tabela([{t:'Data'},{t:'Post'},{t:'Leva para'},{t:'Situação'}],D.marketing.posts.map(p=>{let st=p.status,tp=p.tipo;if(st==='Aguardando seu texto'&&dataBR(p.data)<h){st='Atrasado';tp='ruim';}return [p.data,p.titulo,p.leva,pill(st,tp)];}))),
+    sec('Rotina no Instagram (@prof.lesartori)',tabela([{t:'O quê'},{t:'Quando'}],D.marketing.rotina.map(x=>[x.o,x.q]))),
+    sec('Anúncios',tabela([{t:'Campanha'},{t:'Situação'}],D.marketing.anuncios.map(x=>[x.nome,x.status]))));
+  return frag;
+},
+afazeres(){
+  const s=el('section'),l=el('div','lista'),f=feitos();
+  s.append(el('h2',null,'Afazeres'),el('p','nota','Marque o que já fez. A marcação fica salva neste aparelho.'));
+  D.afazeres.slice().sort((a,b)=>dataBR(a.data)-dataBR(b.data)).forEach(a=>{
+    const it=el('label','item'+(f[a.id]?' feito':'')),cb=el('input');cb.type='checkbox';cb.checked=!!f[a.id];
+    cb.onchange=()=>{marcar(a.id,cb.checked);it.classList.toggle('feito',cb.checked);};
+    const tx=el('div','txt');tx.append(el('div','data',a.data),el('div',null,a.texto));it.append(cb,tx);l.append(it);});
+  s.append(l);return s;
+}};
+function mostrarAba(n){document.querySelectorAll('.tab').forEach(t=>t.setAttribute('aria-selected',t.dataset.aba===n?'true':'false'));const c=$('#conteudo');c.replaceChildren(abas[n]());const at=el('p','nota','Atualizado em '+D.atualizado+'.');c.append(at);}
+document.querySelectorAll('.tab').forEach(t=>t.onclick=()=>mostrarAba(t.dataset.aba));
+function popup(){
+  const f=feitos(),h=hoje(),lim=new Date(h);lim.setDate(lim.getDate()+7);
+  const itens=D.afazeres.filter(a=>!f[a.id]&&dataBR(a.data)<=lim).sort((a,b)=>dataBR(a.data)-dataBR(b.data));
+  const ul=$('#pop-lista');ul.replaceChildren();
+  if(!itens.length){ul.append(el('li',null,'Nada urgente nos próximos 7 dias.'));}
+  itens.forEach(a=>{const li=el('li');const bb=el('b',null,(dataBR(a.data)<h?'Atrasado ('+a.data+')':a.data)+': ');li.append(bb,document.createTextNode(a.texto));ul.append(li);});
+  $('#pop').hidden=false;$('#pop-ok').focus();
+}
+$('#pop-ok').onclick=()=>{$('#pop').hidden=true;};
+$('#bt-avisos').onclick=popup;
+$('#bt-sair').onclick=()=>{D=null;$('#conteudo').replaceChildren();mostra('#tela-entrar');};
+function abrir(dados){D=dados;mostra('#tela-painel');mostrarAba('geral');popup();}
+})();
+</script>
+</body>
+</html>
