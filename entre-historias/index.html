@@ -458,11 +458,11 @@ document.addEventListener('click',function(e){var a=e.target.closest&&e.target.c
 <script>
 // Links de checkout da Hotmart (preencher quando os produtos estiverem cadastrados)
 var CHECKOUT = {
-  "super": "https://pay.hotmart.com/Y108376743N?off=3u4vutqi", "combo-baby": "https://pay.hotmart.com/G108376655D?off=qm83x07f", "combo-pre": "https://pay.hotmart.com/W108376706U?off=f8lshmfu",
-  "coppelia-baby": "https://pay.hotmart.com/U108365850T?off=r4h31y93", "coppelia-pre": "https://pay.hotmart.com/P108365884L?off=a687cwfd",
-  "esmeralda-baby": "https://pay.hotmart.com/I108376392R?off=osp0dnki", "esmeralda-pre": "https://pay.hotmart.com/A108376461J?off=w14l4hk6",
-  "napoli-baby": "https://pay.hotmart.com/E108376503E?off=8oda9d0c", "napoli-pre": "https://pay.hotmart.com/T108376546X?off=h02brt7z",
-  "quebranozes-baby": "https://pay.hotmart.com/C108376581T?off=yjrp8dlb", "quebranozes-pre": "https://pay.hotmart.com/F108376612U?off=4nxu0b8h"
+  "super": "https://pay.hotmart.com/Y108376743N?off=3u4vutqi&checkoutMode=10", "combo-baby": "https://pay.hotmart.com/G108376655D?off=qm83x07f&checkoutMode=10", "combo-pre": "https://pay.hotmart.com/W108376706U?off=f8lshmfu&checkoutMode=10",
+  "coppelia-baby": "https://pay.hotmart.com/U108365850T?off=r4h31y93&checkoutMode=10", "coppelia-pre": "https://pay.hotmart.com/P108365884L?off=a687cwfd&checkoutMode=10",
+  "esmeralda-baby": "https://pay.hotmart.com/I108376392R?off=osp0dnki&checkoutMode=10", "esmeralda-pre": "https://pay.hotmart.com/A108376461J?off=w14l4hk6&checkoutMode=10",
+  "napoli-baby": "https://pay.hotmart.com/E108376503E?off=8oda9d0c&checkoutMode=10", "napoli-pre": "https://pay.hotmart.com/T108376546X?off=h02brt7z&checkoutMode=10",
+  "quebranozes-baby": "https://pay.hotmart.com/C108376581T?off=yjrp8dlb&checkoutMode=10", "quebranozes-pre": "https://pay.hotmart.com/F108376612U?off=4nxu0b8h&checkoutMode=10"
 };
 document.querySelectorAll('[data-checkout]').forEach(function(a){
   var u = CHECKOUT[a.getAttribute('data-checkout')];
