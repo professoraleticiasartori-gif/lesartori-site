@@ -124,6 +124,13 @@ nav a:hover{color:var(--magenta)}
 .card h3{font-size:25px}
 .card p{margin:0;font-size:14px;color:var(--suave)}
 .card .mais{font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--magenta)}
+.misterio{position:relative;aspect-ratio:4/3;overflow:hidden;background:#140812;display:grid;place-content:center;text-align:center;gap:6px;isolation:isolate}
+.misterio::before{content:"";position:absolute;inset:-20px;background:url(bastidores-tutu.jpg) center/cover;filter:blur(7px) brightness(.38) saturate(1.2);z-index:-2}
+.misterio::after{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(ellipse at 50% 120%,rgba(163,22,90,.55),transparent 60%),radial-gradient(circle at 18% 22%,#F7E7B4 0 1.5px,transparent 2.5px),radial-gradient(circle at 78% 18%,#fff 0 1px,transparent 2px),radial-gradient(circle at 64% 70%,#F7E7B4 0 1.5px,transparent 2.5px),radial-gradient(circle at 30% 78%,#fff 0 1px,transparent 2px),radial-gradient(circle at 88% 58%,#F7E7B4 0 1px,transparent 2px),radial-gradient(circle at 10% 60%,#fff 0 1px,transparent 2px)}
+.misterio .mb{font-family:var(--display);font-style:italic;font-weight:500;font-size:clamp(34px,4vw,44px);line-height:1;color:#F3DFA2;text-shadow:0 0 18px rgba(243,223,162,.45)}
+.misterio .md{font-size:11px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:#F4D9E4}
+.misterio .lua{font-size:18px;color:#F3DFA2;letter-spacing:.6em;opacity:.85}
+@media (prefers-reduced-motion:no-preference){.misterio::after{animation:brilha 3.2s ease-in-out infinite alternate}@keyframes brilha{from{opacity:.55}to{opacity:1}}}
 @media (max-width:900px){.cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:560px){.cards{grid-template-columns:1fr}}
 
@@ -295,7 +302,7 @@ footer img{height:44px;width:auto;margin:0 auto 10px}
         <h2>Cursos, mentorias e coreografias</h2>
       </div>
       <div class="cards">
-        <a class="card" href="#contato"><img src="bastidores-tutu.jpg" alt="Bailarina de tutu nos bastidores" loading="lazy"><p class="olho">Para professoras</p><h3>Curso para Professores de Ballet Infantil</h3><p>Ludicidade com fundamento: aulas que encantam a criança e têm objetivo claro para a professora.</p><span class="mais">Quero saber mais</span></a>
+        <a class="card" href="#contato"><div class="misterio" role="img" aria-label="Em breve: dezembro de 2026"><span class="lua" aria-hidden="true">✦ ✧ ✦</span><span class="mb">Em breve</span><span class="md">dezembro de 2026</span></div><p class="olho">Para professoras</p><h3>Curso para Professores de Ballet Infantil</h3><p>Ludicidade com fundamento: aulas que encantam a criança e têm objetivo claro para a professora.</p><span class="mais">Quero ser avisada</span></a>
         <a class="card" href="https://cursos.lesartori.com.br/didatica-ballet-adulto/"><img src="flyer-curso-adulto.jpg" alt="Flyer do curso Do Plié ao Grande Jeté" loading="lazy"><p class="olho">Para professoras</p><h3>Curso para Professores de Ballet Juvenil e Adulto</h3><p>Didática, progressão técnica e linguagem para turmas juvenis e adultas.</p><span class="mais">Ver o curso</span></a>
         <a class="card" id="ballet-online" href="https://cursos.lesartori.com.br/metodo-ballet-online/"><img src="https://cursos.lesartori.com.br/metodo-ballet-online/img/og.jpg" alt="Método Ballet Online por Le Sartori" loading="lazy"><p class="olho">Para alunas adultas</p><h3>Método Ballet Online</h3><p>Ballet clássico para adultas, do zero, com aulas ao vivo comigo.</p><span class="mais">Conhecer o método</span></a>
         <a class="card" href="#coreografias"><img src="casamento-capa.jpg" alt="Noivos dançando a valsa" loading="lazy"><p class="olho">Eventos</p><h3>Coreografias para Casamento, 15 Anos e Eventos</h3><p>A valsa, a entrada ou a apresentação criada sob medida e ensaiada com calma.</p><span class="mais">Ver vídeo e pedir orçamento</span></a>
