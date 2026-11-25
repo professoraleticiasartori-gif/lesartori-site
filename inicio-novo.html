@@ -62,8 +62,9 @@ nav a:hover{color:var(--magenta)}
 .cartaz{padding-block:64px 96px}
 .cartaz .grade{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:40px;align-items:start}
 .destaque{background:var(--noite);color:#F5EDF0;border-radius:4px;overflow:hidden;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
-.destaque .arte{background:#1d1418}
-.destaque .arte img{width:100%;height:100%;object-fit:cover;aspect-ratio:1/1}
+.destaque .arte{background:var(--noite);display:flex;align-items:flex-end;justify-content:center;padding:36px 24px 0}
+.arco{background:#B60150;border-radius:999px 999px 0 0;width:min(100%,290px);aspect-ratio:3/4.3;display:flex;align-items:flex-end;justify-content:center;overflow:hidden}
+.arco img{width:86%;height:auto;margin-bottom:-4px}
 .destaque .txt{padding:40px 36px;display:flex;flex-direction:column;gap:16px;justify-content:center}
 .destaque .olho{color:#E8A9C0}
 .destaque h2{color:#fff;font-size:clamp(36px,4.2vw,52px)}
@@ -84,8 +85,8 @@ nav a:hover{color:var(--magenta)}
 .prod small{display:block;font-size:13px;color:var(--suave);line-height:1.45;margin-top:2px}
 .prod .seta{font-family:var(--display);font-size:24px;color:var(--ouro);transition:transform .25s}
 .prod:hover .seta{transform:translateX(4px);color:var(--magenta)}
-@media (max-width:980px){.cartaz .grade{grid-template-columns:1fr}}
-@media (max-width:640px){.destaque{grid-template-columns:1fr}.destaque .txt{padding:28px 22px}}
+@media (max-width:1100px){.cartaz .grade{grid-template-columns:1fr}}
+@media (max-width:640px){.destaque{grid-template-columns:1fr}.destaque .txt{padding:28px 22px}.arco{width:min(100%,230px)}}
 
 /* repertório */
 .repertorio{background:var(--blush)}
@@ -199,7 +200,7 @@ footer img{height:44px;width:auto;margin:0 auto 10px}
   <section class="cartaz" id="metodo">
     <div class="wrap grade">
       <article class="destaque">
-        <div class="arte"><img src="https://cursos.lesartori.com.br/metodo-ballet-online/img/og.jpg" alt="Método Ballet Online por Le Sartori: a Lelê de uniforme em pose de ballet" width="1200" height="1200"></div>
+        <div class="arte"><div class="arco"><img src="https://cursos.lesartori.com.br/metodo-ballet-online/img/m-barra.webp" alt="A Lelê na barra, de uniforme de ballet" width="360" height="483"></div></div>
         <div class="txt">
           <p class="olho">Em destaque · Turma 1 · 2027</p>
           <h2><em>Método</em> Ballet Online</h2>
