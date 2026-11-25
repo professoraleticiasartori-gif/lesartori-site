@@ -183,6 +183,29 @@ footer img{height:44px;width:auto;margin:0 auto 10px}
 @keyframes cai{to{transform:translate3d(-10px,105vh,0) rotate(300deg)}}
 @media (prefers-reduced-motion:reduce){.neve{display:none}.capa img,.prod .seta{transition:none}}
 </style>
+<style>
+/* Tema escuro com marca d'água da Le dando aula */
+:root{--marfim:#120A0E;--papel:rgba(255,255,255,.025);--blush:rgba(194,24,91,.08);--vinho:#F4E9ED;--magenta:#C2185B;--ouro:#C9A96A;--ouro-claro:rgba(201,169,106,.28);--texto:#E8DCE1;--suave:#B7A2AB;--noite:#0A0507}
+html{background:#120A0E}
+body{background:transparent;position:relative;isolation:isolate}
+body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(rgba(18,10,14,.86),rgba(18,10,14,.93)),url(le-flor.jpg) center 30%/cover no-repeat;filter:grayscale(.35)}
+header{background:rgba(18,10,14,.92);backdrop-filter:blur(6px)}
+.topo img,footer img{filter:brightness(1.6) saturate(1.1)}
+.btn-linha:hover{color:#120A0E}
+.destaque{border:1px solid rgba(201,169,106,.35)}
+.lenda{background:rgba(91,26,56,.55)}
+.lenda .btn-linha:hover{color:#3A0F24}
+.capa img{box-shadow:0 18px 40px -18px rgba(0,0,0,.9)}
+.prod img{background:#24121B}
+.sobre figure::after{border-color:rgba(201,169,106,.55)}
+.coreo video{border:1px solid var(--ouro-claro)}
+.sombra{position:relative;aspect-ratio:4/3;overflow:hidden;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:8px;padding-left:7%;text-align:left;background:radial-gradient(circle at 68% 62%,#C2185B 0,#7A1240 32%,#3A0F24 62%,#1A0710 100%)}
+.sombra svg{position:absolute;right:-2%;bottom:0;height:96%;width:auto}
+.sombra span{position:relative;z-index:1;max-width:55%}
+.sombra .mb{font-family:var(--display);font-style:italic;font-weight:500;font-size:clamp(30px,3.6vw,40px);line-height:1;color:#F3DFA2;text-shadow:0 0 18px rgba(243,223,162,.35)}
+.sombra .md{font-size:11px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:#FBE8EF}
+.sombra .md2{font-family:var(--display);font-style:italic;font-size:17px;color:#F4D9E4}
+</style>
 </head>
 <body>
 
@@ -305,7 +328,7 @@ footer img{height:44px;width:auto;margin:0 auto 10px}
         <a class="card" href="#contato"><div class="misterio" role="img" aria-label="Em breve: dezembro de 2026"><span class="lua" aria-hidden="true">✦ ✧ ✦</span><span class="mb">Em breve</span><span class="md">dezembro de 2026</span></div><p class="olho">Para professoras</p><h3>Curso para Professores de Ballet Infantil</h3><p>Ludicidade com fundamento: aulas que encantam a criança e têm objetivo claro para a professora.</p><span class="mais">Quero ser avisada</span></a>
         <a class="card" href="https://cursos.lesartori.com.br/didatica-ballet-adulto/"><img src="flyer-curso-adulto.jpg" alt="Flyer do curso Do Plié ao Grande Jeté" loading="lazy"><p class="olho">Para professoras</p><h3>Curso para Professores de Ballet Juvenil e Adulto</h3><p>Didática, progressão técnica e linguagem para turmas juvenis e adultas.</p><span class="mais">Ver o curso</span></a>
         <a class="card" id="ballet-online" href="https://cursos.lesartori.com.br/metodo-ballet-online/"><img src="https://cursos.lesartori.com.br/metodo-ballet-online/img/og.jpg" alt="Método Ballet Online por Le Sartori" loading="lazy"><p class="olho">Para alunas adultas</p><h3>Método Ballet Online</h3><p>Ballet clássico para adultas, do zero, com aulas ao vivo comigo.</p><span class="mais">Conhecer o método</span></a>
-        <a class="card" href="#coreografias"><img src="casamento-capa.jpg" alt="Noivos dançando a valsa" loading="lazy"><p class="olho">Eventos</p><h3>Coreografias para Casamento, 15 Anos e Eventos</h3><p>A valsa, a entrada ou a apresentação criada sob medida e ensaiada com calma.</p><span class="mais">Ver vídeo e pedir orçamento</span></a>
+        <a class="card" href="#coreografias"><div class="sombra" role="img" aria-label="Coreografias: solicite seu orçamento e confira nossos trabalhos"><svg viewBox="95 35 200 260" aria-hidden="true"><g fill="#0B0508"><circle cx="128" cy="62" r="12.5"/><path d="M122 73 L134 73 L135 82 L121 82Z"/><path d="M108 86 Q128 78 150 86 L156 96 Q160 108 152 120 L148 170 L118 170 L114 120 Q100 104 108 86Z"/><path d="M150 90 Q166 96 176 108 L172 114 Q160 104 148 102Z"/><path d="M110 92 Q96 120 104 150 L110 148 Q106 122 116 100Z"/><path d="M118 168 L146 168 L150 230 L152 284 L141 286 L134 214 L128 214 L122 286 L110 286 L114 230Z"/><path d="M140 284 L158 286 L158 290 L138 290Z"/><path d="M110 284 L124 286 L124 290 L104 290Z"/><circle cx="166" cy="56" r="11.5"/><circle cx="174" cy="47" r="7"/><path d="M160 66 L170 66 L171 74 L159 74Z"/><path d="M156 78 Q166 72 178 80 L180 96 Q176 116 174 132 L160 132 Q156 112 154 96Z"/><path d="M156 82 Q140 84 134 92 L138 98 Q146 92 158 92Z"/><path d="M160 128 L176 128 Q196 170 232 214 Q262 246 274 284 L238 278 Q214 290 186 286 Q150 292 124 288 Q140 236 152 184 Q156 152 160 128Z"/><path d="M232 214 Q262 236 286 238 Q268 252 250 248Z" opacity=".9"/><path d="M176 46 Q206 70 214 120 Q220 150 236 170 Q206 150 196 112 Q190 82 174 56Z" opacity=".5"/></g></svg><span class="mb">Coreografias</span><span class="md">Solicite seu orçamento</span><span class="md2">e confira nossos trabalhos</span></div><p class="olho">Eventos</p><h3>Coreografias para Casamento, 15 Anos e Eventos</h3><p>A valsa, a entrada ou a apresentação criada sob medida e ensaiada com calma.</p><span class="mais">Ver vídeo e pedir orçamento</span></a>
         <a class="card" id="mentoria" href="#contato"><img src="le-flor.jpg" alt="Professora preparando aluna para apresentação" loading="lazy"><p class="olho">Individual</p><h3>Mentoria Individual</h3><p>Planejamento de aulas, turmas, didática e carreira na dança para professoras e donas de escola.</p><span class="mais">Agendar conversa</span></a>
         <a class="card" id="coach" href="#contato"><img src="palco-petipa.jpg" alt="Bailarinas no palco do Festival Petipá" loading="lazy"><p class="olho">Para bailarinas</p><h3>Coach para Bailarinos Profissionais</h3><p>Audições, rotina de treino, repertório e escolhas de trajetória para quem quer seguir carreira.</p><span class="mais">Quero direcionamento</span></a>
       </div>
@@ -388,12 +411,6 @@ footer img{height:44px;width:auto;margin:0 auto 10px}
 (function(){
   var hoje=new Date();
   document.querySelectorAll('[data-ate]').forEach(function(el){if(hoje>new Date(el.getAttribute('data-ate')+'T23:59:59-03:00'))el.remove();});
-  if(hoje>=new Date('2027-01-07T00:00:00-03:00'))return;
-  if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)return;
-  var n=document.createElement('div');n.className='neve';n.setAttribute('aria-hidden','true');
-  var q=window.innerWidth<640?14:26;
-  for(var i=0;i<q;i++){var f=document.createElement('i');f.textContent=i%2?'❄':'•';f.style.left=(Math.random()*100)+'%';f.style.fontSize=(7+Math.random()*10)+'px';f.style.opacity=(.4+Math.random()*.5).toFixed(2);f.style.animationDuration=(12+Math.random()*14).toFixed(1)+'s';f.style.animationDelay=(-Math.random()*24).toFixed(1)+'s';n.appendChild(f);}
-  document.body.appendChild(n);
 })();
 </script>
 </body>
